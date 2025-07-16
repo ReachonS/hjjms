@@ -360,39 +360,54 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section
-        id="contact"
-        className="py-16 md:py-20 bg-gradient-to-br from-gray-800 to-gray-900 text-white"
-      >
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
-              Contact <span className="text-orange-400">Us</span>
-            </h2>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <Phone className="w-8 h-8 text-orange-400" />
-                <h3 className="text-2xl font-bold">Contact</h3>
-              </div>
-              <a
-                href="tel:+919830984267"
-                className="text-3xl md:text-4xl font-bold text-orange-400 hover:text-orange-300 transition-colors"
-              >
-                +91 9830984267
-              </a>
-              <br />
-              <br />
-              <a
-                href="tel:+919830984267"
-                className="text-3xl md:text-4xl font-bold text-orange-400 hover:text-orange-300 transition-colors "
-              >
-                sadhuakash55@gmail.com
-              </a>
-            </div>
+     {/* Contact Section */}
+<section
+  id="contact"
+  className="py-16 md:py-20 bg-gradient-to-br from-gray-800 to-gray-900 text-white"
+>
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto text-center">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
+        Contact <span className="text-orange-400">Us</span>
+      </h2>
+      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg space-y-6 text-sm md:text-base">
+        
+        {/* Contact Info */}
+        <div>
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <Phone className="w-6 h-6 text-orange-400" />
+            <h3 className="text-xl font-semibold">Contact</h3>
           </div>
+          <p className="text-orange-300 font-medium">
+            📞 <a href="tel:+918637809502" className="hover:text-orange-200 transition">+91 8637809502</a><br />
+            ✉ <a href="mailto:hjjms.contact@gmail.com" className="hover:text-orange-200 transition">hjjms.contact@gmail.com</a>
+          </p>
         </div>
-      </section>
+
+        {/* Registered Office */}
+        <div>
+          <h3 className="text-xl font-semibold mb-1 text-white">Registered Office Address</h3>
+          <p className="text-gray-300">
+            Bhimpur, Krishnanagar 1,<br />
+            Nadia, West Bengal, India.<br />
+            Pin - 741167
+          </p>
+        </div>
+
+        {/* City Office */}
+        <div>
+          <h3 className="text-xl font-semibold mb-1 text-white">City Office</h3>
+          <p className="text-gray-300">
+            P 58/1 Strand Bank Road,<br />
+            Kolkata - 700006
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
