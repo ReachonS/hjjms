@@ -1,40 +1,64 @@
-import { useState } from 'react';
-import Navbar from '../components/Navbar';
+import { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
+import axios from "Axios";
 
 const Membership = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    fatherName: '',
-    dob: '',
-    gender: '',
-    aadhar: '',
-    address: '',
-    city: '',
-    district: '',
-    state: '',
-    pinCode: '',
-    mobile: '',
-    email: ''
+    name: "",
+    fatherName: "",
+    dob: "",
+    gender: "",
+    aadhar: "",
+    address: "",
+    city: "",
+    district: "",
+    state: "",
+    pinCode: "",
+    mobile: "",
+    email: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    (async () => {
+      await axios.post(
+        "https://6877cc68dba809d901f0f3bf.mockapi.io/api/v1/member/membersapi",
+        {
+          name: formData.name,
+          fatherName: formData.fatherName,
+          dateOfBirth: formData.dob,
+          gender: formData.gender,
+          aadhar: formData.aadhar,
+          city: formData.city,
+          state: formData.state,
+          dist: formData.district,
+          pincode: formData.pinCode,
+          phoneNumber: formData.mobile,
+          email: formData.email,
+        }
+      );
+      alert("Data posted successfully")
+    } 
+  )();
+
+    console.log("Form submitted:", formData);
     // Handle form submission here
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
       <Navbar />
-      
+
       {/* Membership Form */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto pt-24 px-4">
@@ -43,7 +67,7 @@ const Membership = () => {
               <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-8">
                 Membership <span className="text-orange-600">Application</span>
               </h2>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -60,7 +84,7 @@ const Membership = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Father's Name *
@@ -91,7 +115,7 @@ const Membership = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Gender *
@@ -158,7 +182,7 @@ const Membership = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       District *
@@ -190,7 +214,7 @@ const Membership = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       PIN Code *
@@ -226,7 +250,7 @@ const Membership = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Email *
@@ -255,7 +279,8 @@ const Membership = () => {
 
               <div className="mt-8 text-center">
                 <p className="text-sm text-gray-600 italic">
-                  This membership connects you to our mission and future updates.
+                  This membership connects you to our mission and future
+                  updates.
                 </p>
               </div>
             </div>
