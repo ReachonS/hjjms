@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import axios from "Axios";
+import axios from "axios";
 
 const Membership = () => {
   const [formData, setFormData] = useState({
