@@ -13,7 +13,6 @@ const Leadership = () => {
               Our <span className="text-orange-200">Leadership</span>
             </h1>
             <p className="text-xl md:text-2xl text-orange-100 max-w-3xl mx-auto">
-              Meet the dedicated individuals guiding our organization's mission
             </p>
           </div>
         </div>
